@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-hw03
+  labels:
+    app: nginx-server
+    tier: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: nginx-server
+        tier: backend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.19.4
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "128Mi"
+          limits:
+            cpu: "20m"
+            memory: "128Mi"
