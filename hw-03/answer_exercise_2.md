@@ -99,3 +99,5 @@ Ademas que en un statefulset cada pod tiene un unico PersistentVolumeClaim asoci
 Para más diferencias, agrego imagen a continacion:
 
 ![deploymentvsStatefulset](../images/deploymentvsStatefulset.png)
+
+Referencia: https://www.baeldung.com/ops/kubernetes-deployment-vs-statefulsets
