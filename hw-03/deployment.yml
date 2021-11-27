@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: nginx-hw03
   labels:
@@ -9,6 +9,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
+      app: nginx-server
       tier: backend
   template:
     metadata:
