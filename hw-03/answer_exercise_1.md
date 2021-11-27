@@ -28,3 +28,39 @@ _Respuesta_
 5. Se hace un minikube tunnel para exponer los puertos
 
 `minikube tunnel`
+
+**B. Una vez realizadas las pruebas con el protocolo HTTP, se pide acceder al servicio mediante la utilización del protocolo HTTPS**
+
+1. Se instalo el OpenSSL mediante HomeBrew
+
+![installOpenSSL](../images/installOpenSSL.png)
+
+2. Genere las llaves codificadas mediante OpenSSL con el siguiente comando:
+
+`OpenSSL genrsa -out ca.key 2048`
+
+3. Genere el certificado valido por 365 dias con el siguiente comando:
+
+`openssl req -x509 -new -nodes -days 365 -key ca.key -out ca.crt -subj "/CN=danielalexis.students.lasalle.com"`
+
+4. Genere el secret con el siguiente comando:
+
+`kubectl create secret tls secret-tls --key ca.key --cert ca.crt`
+
+![generateSecret](../images/generateSecret.png)
+
+5. Aplique cambios en el ingress mediante el siguiente comando:
+
+`kubectl apply -f ingress.yml`
+
+Se agrego esto:
+
+![ingressSecret](../images/ingressSecret.png)
+
+6. Se visualiza el sitio con el certificado SSL
+
+![sitioSSL](../images/sitioSSL.png)
+
+![watchCertificate](../images/watchCertificate.png)
+
+![watchCertificate2](../images/watchCertificate2.png)

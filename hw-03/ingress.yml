@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: nginx-ingress
 spec:
+  tls:
+  - hosts:
+    - danielalexis.students.lasalle.com
+    secretName: secret-tls
   rules: 
   - host: danielalexis.students.lasalle.com
     http:
