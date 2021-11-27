@@ -39,3 +39,11 @@ _Respuesta_
 ![getPods](../images/getPods.png)
 
 Aqui se puede apreciar que subio los pods iniciales en base a la demanda de las pruebas de estres.
+
+6. Obtuve los yml de HPA mediante el siguiente comando:
+
+`kubectl get hpa php-apache -o yaml` = hpa.yml
+
+`kubectl get deployment php-apache -o yaml` = deploymentHPA.yml
+
+`kubectl get svc php-apache -o yaml` = serviceHPA.yml
