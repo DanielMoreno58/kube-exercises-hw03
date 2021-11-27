@@ -29,6 +29,8 @@ _Respuesta_
 
 `minikube tunnel`
 
+---
+
 **B. Una vez realizadas las pruebas con el protocolo HTTP, se pide acceder al servicio mediante la utilización del protocolo HTTPS**
 
 1. Se instalo el OpenSSL mediante HomeBrew
